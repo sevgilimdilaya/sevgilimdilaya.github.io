@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sevgilim İçin Özel Sürpriz!</title>
+	<style>
+		body {
+			background-color: #f9d6d5;
+			font-family: 'Dancing Script', cursive;
+			font-size: 24px;
+			color: #333;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+
+		h1 {
+			font: 3em 'Great Vibes', cursive;
+			margin-top: 50px;
+			text-shadow: 2px 2px #ccc;
+		}
+
+		#surprise-img {
+			margin: 50px auto;
+			display: block;
+			max-width: 80%;
+			box-shadow: 2px 2px 5px #ccc;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+
+		#song {
+			margin-top: 50px;
+			font-size: 1.2em;
+			text-shadow:2px 2px #ccc;
+		}
+
+		#quote {
+			margin-top: 50px;
+			font-size: 1.5em;
+			font-style: italic;
+			text-shadow: 2px 2px #ccc;
+		}
+
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 2em;
+			}
+			#song {
+				font-size: 1em;
+			}
+			#quote {
+				font-size: 1.2em;
+			}
+		}
+
+		body.loaded {
+			opacity: 1;
+		}
+
+		#surprise-img.loaded {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<h1>sarà tutto molto bello</h1>
+	<p>Bütün mümkünlerin kıyısında...</p>
+	
+	<a href="https://resimlink.com/Q3mHkl7pDW" title="ResimLink - Resim Yükle"><img id="surprise-img" src="https://r.resimlink.com/Q3mHkl7pDW.jpeg" title="ResimLink - Resim Yükle" alt="ResimLink - Resim Yükle"></a>
+	
+	<p id="song">Şarkımızı koymasak olmazdı herhalde...</p>
+	<audio controls>
+		<source src="/song.mp3" type="audio/mpeg">
+		Tarayıcınız audio öğesini desteklemiyor.
+	</audio>
+
+	<p id="quote">Varlığın, yaşamımın anlamı sevgilim. Gözlerinin içinde kaybolurken, dünyanın tüm sıkıntılarından arınıyorum. Her nefes aldığımda, seni sevmenin verdiği huzuru en derinlerde hissediyorum. Hayatın bana sunduğu en büyük nimet, seninle geçirdiğim her an. İyi ki varsın, seni sevmek benim için bir ayrıcalık.</p>
+
+	<script>
+		const name = "Dilanurrrr"; // Sevgilinin adını burada değiştirebilirsiniz.
+		const message = `${name}! Sürprize hazır mısın? Vazgeç dersen bozuşuruz bak!`; // Spriz hazır mısın sorusunu burada değiştirebilirsiniz.
+		const response = confirm(message); // Kullanıcıya soruyu gösterip cevabını alıyoruz.
+		if (response) {
+			alert("Bide hazır olma! İzle şimdi kocanın sürprizini!");
+		} else {
+			alert("Hayır, hazırsın. Ona ben karar veririm!"); // Kullanıcı hayır derse bu mesajı gösteriyoruz.
+		}
+	</script>
+
+	<script>
+	  window.addEventListener('load', function() {
+	    document.body.classList.add('loaded');
+	    document.getElementById('surprise-img').classList.add('loaded');
+	  });
+
+	  const audio = document.getElementsByTagName("audio")[0];
+	  audio.addEventListener('canplaythrough', function() {
+	    audio.play();
+	  });
+	</script>
+</body>
+</html>
